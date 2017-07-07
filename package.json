@@ -1,0 +1,24 @@
+{
+    "version":"1.0.1",
+    "name":"ITP",
+    "productionName":"ELECTRON_ITP",
+    "description":" a electron demo of itp",
+    "main":"main.js",
+    "keywords":[
+        "electron",
+        "ITP"
+    ],
+    "devDependencies": {
+       "electron-packager": "^8.6.0",
+       "electron":"~1.6.2"
+    },
+    "author":"chenk-fnst",
+    "manifest":[
+        {
+            "version":"1.0.1",
+            "file":["index.html"],
+            "detail":["改动了F03.html的样式"]
+        }
+    ],
+    "license":"MIT"
+}
