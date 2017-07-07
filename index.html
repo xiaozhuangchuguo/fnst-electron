@@ -1,0 +1,217 @@
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="./Content/Images/ITP.ico" rel="SHORTCUT ICON" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./Content/css/JA/normal.css" />
+    <link href="./Content/Css/JA/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/Css/jqueryui/jquery-ui.min.css" rel="stylesheet" />
+    <link href="./Content/Scripts/wijmo/css/jquery.wijmo-pro.all.3.20153.84.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/JA/C10.css" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/JA/C11.css" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/theme/default/JA/style.css" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/JA/C00.css" />
+    <link rel="apple-touch-icon-precomposed" href="./images/ITP_home.png" />
+    <link rel="apple-touch-startup-image" href="./images/ITP_home.png" />
+    <script src="./JS/lulu.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./stylesheet/f03local.css"/>    
+    <title>ITP-WebService V2</title>
+    
+</head>
+<body >
+        <div id="F03_login_page" class="main logincontent" style="text-align: center;">
+            <section class="loginpanel" style="margin: auto;">
+                <div class="fl"></div>
+                <div class="fr" style="margin: auto;">
+                    <div class="mt">这是热更新后的F03</div>
+                    <table border="0" cellspacing="5" cellpadding="5">
+                        <tbody>
+                            <tr>
+                                <td>ユーザID</td>
+                                <td><input id="userid" class="tbox" type="text" required></td>
+                            </tr>
+                            <tr>
+                                <td>パスワード</td>
+                                <td><input id="password" class="tbox" type="password" required></td>
+                            </tr>
+                            <tr class="F03_language">
+                                <td>Language</td>
+                                <td>
+                                    <select id="language">
+                                        <option value="EN">English</option>
+                                        <option value="TH">Thai</option>
+                                    </select>
+                                </td>
+                            </tr>          
+                            <tr>
+                                <td></td>
+                                
+                                <td style="float: left;margin-left: -60px;">
+                                    <input class=" cbox" id="isremmber" type="checkbox">
+                                    <label for="isremmber">ユーザIDを記憶する。</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: left;margin-top: -25px;margin-left: 120px;">
+                                    <input class=" cbox" id="statute" type="checkbox" checked="checked">
+                                    <label class="agree_text1">に同意する。</label>
+                                        <label for="statute"><a href="javascript:void(0)" onclick="open('http://localhost:14587/Content/Html/EN/UseTerms.htm', 'UserLicence', 'height=785, width=875, top=100, left=100,toolbar= no, menubar=no, scrollbars=yes, resizable=yes, location=no, status=no');">利用規約</a></label>
+                                    <label class="agree_text2">に同意する。</label>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                
+                                                <td align="left" id="td_login"><input class="btn itp-btn-default w100" id="login" type="button" value='ログイン'></td>
+                                                
+                                                <td align="center"><input class="btn itp-btn-default w100" id="cancel" type="button" value='取消'></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="unsupport_div" style="color:red;padding:20px 15px;display:none">Your browser&nbsp;<span id="unsupportbrowser_name"></span>&nbsp;<span id="unsupportbrowser_version"></span>&nbsp;is not supported.<br />Please use Internet Explorer 11 or upper version, Google Chrome 23 or upper version.</div>
+                </div>
+            </section>
+            <div class="F03_scroll_page_top" style="display: none">
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="main">
+            <div id="updategroup">
+                <!--检查更新-->
+                <div id="configDetect" class="config-detect">
+                    <svg class="icon icon-sync"><use xlink:href="#icon-sync"></use></svg>正在检测更新...
+                </div>
+                <i id="updateProgress" class="update-progress"></i>
+            </div>
+        </div>
+    </div>
+
+<script>
+  window.noderequire=require
+  delete window.module
+  delete window.exports
+  delete window.require
+</script>
+<!--最先加载检查更新的js-->
+<script src="./JS/update.js"></script>
+
+
+<script src="./Content/Scripts/Library/jquery-2.0.3.js"></script>
+<script src="./Content/Scripts/Library/jquery.json-2.4.js"></script>
+<script src="./Content/Scripts/Library/jquery-ui-1.10.4.min.js"></script>
+<script src="./Content/Scripts/wijmo/js/jquery.wijmo-open.all.3.20153.84.min.js"></script>
+<script src="./Content/Scripts/wijmo/js/jquery.wijmo-pro.all.3.20153.84.min.js"></script>
+    
+<script src="./Content/Scripts/Modules/F03/F03.js"></script>
+<script src="./Content/Scripts/Common/C10.js"></script>
+<script src="./Content/Scripts/Common/C11.js"></script>
+<script src="./Content/Scripts/Common/C70.js"></script>
+<script src="./Content/Scripts/Common/common_render.js"></script>
+<script src="./Content/Scripts/Utils/itp-eventbus.js"></script>
+<script src="./Content/Scripts/Utils/itp.common.js"></script>
+<script src="./Content/Scripts/Library/spectrum/spectrum.js"></script>  
+<script src="./Content/Scripts/i18n/JA/itp.locale-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.C04-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D00-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D01-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D03-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D04-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D05-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D10-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D11-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.D30-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F03-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F11-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F12-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F13-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F14-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F15-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F18-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F21-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F22-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F24-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F25-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F26-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F27-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F28-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F31-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F32-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F33-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F34-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F41-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F42-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F43-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F44-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F45-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F46-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F49-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F4A-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F4B-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F4C-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F52-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F53-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F54-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F55-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F56-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F57-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F58-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F59-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F5A-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F61-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F62-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F63-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F64-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F65-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F66-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F71-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F72-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F73-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F74-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F75-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F76-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F81-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F91-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F92-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F93-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F94-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F95-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.F96-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.map-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P12-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P13-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P15-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P16-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P17-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P31-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P41-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P43-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P44-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P45-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P46-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P47-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P4A-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P4B-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P4C-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P53-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P57-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P58-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P61-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P62-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P63-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P71-ja.js"></script>
+<script src="./Content/Scripts/i18n/JA/itp.locale.P72-ja.js"></script>
+<script src="./Content/Scripts/Library/spectrum/i18n/jquery.spectrum-ja.js"></script>
+</body>
+</html>
